@@ -8,7 +8,8 @@ var config = {
   adminUser: null,
   adminPass: null,
   siteTitle: 'tekt',
-  siteAuthor: 'tekt'
+  siteAuthor: 'tekt',
+  defaultMessageOptions: {}
 };
 
 _.merge(config, {

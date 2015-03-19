@@ -17,6 +17,7 @@
     "mongo": "1.4.34",
     "mongoose": "3.8.25",
     "morgan": "~1.5.1",
+    "realist": "0.2.5",
     "serve-favicon": "~2.2.0",
     "stylus": "0.42.3",
     "twitter": "1.2.5"
