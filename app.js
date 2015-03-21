@@ -1,6 +1,7 @@
 var program = require('commander'),
   core = require('./lib/core'),
-  _ = require('lodash');
+  _ = require('lodash'),
+  util = require('util');
 
 function dumpMessageDetails(message, options) {
   if (options.full) {
@@ -58,6 +59,25 @@ program
         process.exit(0);
       }
     })
+  });
+
+program
+  .command('create <message>')
+  .description('create a new message and store it in the database')
+  .option('-k, --key <key>', 'specify the unique message key')
+  .option('-s, --separator', 'specify the text fragment separator')
+  .action(function (messageText, options) {
+    var textFragments = messageText.split(options.separator || '|');
+    core.createMessage(options.key, textFragments, {}, function (err, message) {
+      if (err) {
+        console.error('Error creating message: ', err);
+        process.exit(1);
+      } else {
+        console.log('Message created: ', message.key);
+        dumpMessageDetails(message, {full: true});
+        process.exit(0);
+      }
+    });
   });
 
 
