@@ -7,13 +7,13 @@
   },
   "dependencies": {
     "async": "0.9.0",
+    "commander": "^2.7.1",
     "debug": "~2.1.1",
     "github2": "2.4.0",
     "moment": "2.6.0",
     "mongo": "1.4.34",
     "mongoose": "3.8.25",
     "morgan": "~1.5.1",
-    "realist": "0.2.5",
     "twitter": "1.2.5"
   }
 }
